@@ -28,4 +28,5 @@ dp = Dispatcher(bot,storage=MemoryStorage())
 
 class States(StatesGroup):  # Создаём состояния
     
-    pass
+    USER_SUBSCRIBE = State()#Ожидание подписки
+    USER_VIEW = State()#Ожидание нажатия кнопки просмотра
