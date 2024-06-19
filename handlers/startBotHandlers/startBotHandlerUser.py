@@ -54,6 +54,9 @@ async def checkSubscribe(call:types.CallbackQuery):
     await call.message.answer_photo(caption=sendText, photo=sendImg, reply_markup = keyboard)
 
     await States.USER_VIEW.set()
+
+
+    
     
 
 

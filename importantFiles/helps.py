@@ -30,3 +30,8 @@ class States(StatesGroup):  # Создаём состояния
     
     USER_SUBSCRIBE = State()#Ожидание подписки
     USER_VIEW = State()#Ожидание нажатия кнопки просмотра
+    USER_MESSAGE_1 = State()
+    USER_MESSAGE_2 = State()
+    USER_MESSAGE_3 = State()
+
+    GET_PAY_IMG = State()#Ожидание фото оплаты

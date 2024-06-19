@@ -19,3 +19,7 @@ async def getVideoId(message:types.Message):
 
 async def getVoiceId(message:types.Message):
     await message.answer(message.voice.file_id)
+
+
+async def getAudioId(message:types.Message):
+    await message.answer(message.audio.file_id)

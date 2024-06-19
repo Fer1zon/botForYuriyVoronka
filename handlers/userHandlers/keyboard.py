@@ -1,6 +1,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 
 #ПЕРВЫЙ ВОПРОС 
-one_quest_1=InlineKeyboardButton("👍Классный",callback_data="Классный")
-one_quest_2=InlineKeyboardButton("✔Лучший",callback_data="Лучший")
-one_quest_3=InlineKeyboardButton("😎Супер",callback_data="Супер")
+tariff9900 = InlineKeyboardButton("ТАРИФ ЗА 9990", callback_data="9990")
+tariff54990 = InlineKeyboardButton("ТАРИФ ЗА 54990", callback_data="54990")
+tariff10990 = InlineKeyboardButton("ТАРИФ ЗА 10990", callback_data="10990")
+tariff39990 = InlineKeyboardButton("ТАРИФ ЗА 39990", callback_data="39990")
