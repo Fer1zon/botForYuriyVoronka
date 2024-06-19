@@ -154,3 +154,16 @@ async def sendMessageAfter6Hours(chat_id, state):
 
 
 
+async def sendPodcast(chat_id):
+    with open(Path("utils","messageContent","podcastWithStudent","audio.txt"), "r", encoding="UTF-8") as audioFile:
+        sendAudio = audioFile.read()
+
+    await bot.send_audio(chat_id=chat_id, audio=sendAudio)
+
+    
+
+
+
+
+
+

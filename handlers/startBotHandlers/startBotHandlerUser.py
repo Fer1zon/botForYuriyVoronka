@@ -21,7 +21,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 async def startBotHandlerUser(message : types.Message):
-    await message.answer_video_note(video_note="BAACAgIAAxkBAALSb2ZxwP8pJohDxI34sFnInJs3t1LSAALNVAACgCaRSxjR33cmkWZbNQQ")
+    
     with open(Path("utils","messageContent","startMessageContent","textStartMessage.txt"), "r", encoding="utf-8") as textFile:
         sendText = textFile.read()
 

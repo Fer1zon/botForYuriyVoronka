@@ -35,3 +35,12 @@ class States(StatesGroup):  # Создаём состояния
     USER_MESSAGE_3 = State()
 
     GET_PAY_IMG = State()#Ожидание фото оплаты
+
+
+
+
+    ADMIN_MAIN_MENU = State()
+    ADMIN_IMG = State()
+    ADMIN_TEXT = State()
+    ADMIN_VIDEO = State()
+    ADMIN_AUDIO = State()
