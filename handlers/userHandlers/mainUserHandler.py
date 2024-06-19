@@ -24,6 +24,7 @@ from handlers.userHandlers import keyboard as kb
 
 
 async def viewContent(call:types.CallbackQuery):
+    await call.message.edit_reply_markup(reply_markup=None)
     with open(Path("utils","messageContent","message1","sendText.txt"), "r", encoding="utf-8") as textFile:
         sendText = textFile.read()
 
@@ -46,6 +47,7 @@ async def viewContent(call:types.CallbackQuery):
 
 
 async def message2(call:types.CallbackQuery):
+    await call.message.edit_reply_markup(reply_markup=None)
     try:#Удаление прошлой задачи если она существует
         deleteJobId = call.data.split("|")[1]
         scheduler.remove_job(deleteJobId)
@@ -76,6 +78,7 @@ async def message2(call:types.CallbackQuery):
 
 
 async def message3(call:types.CallbackQuery, state:FSMContext):
+    await call.message.edit_reply_markup(reply_markup=None)
     
     await state.update_data(payStatus = "False")
     try:#Удаление прошлой задачи если она существует

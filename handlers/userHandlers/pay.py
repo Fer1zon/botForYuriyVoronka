@@ -21,6 +21,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 async def payClick(call:types.CallbackQuery, state:FSMContext):
+    await call.message.edit_reply_markup(reply_markup=None)
     await state.update_data(payStatus = "True")
     with open(Path("utils", "messageContent", "payUrl", call.data + ".txt"), "r", encoding="utf-8") as textFile:
         sendUrl = textFile.read()
@@ -40,13 +41,14 @@ async def payClick(call:types.CallbackQuery, state:FSMContext):
 
 
 async def getPayImg(message:types.Message, state:FSMContext):
+    
     await state.update_data(payStatus = "True")
     async with state.proxy() as data:
         price = data["price"]
 
     await message.answer("Ваша заявка отправлена. Ожидайте ответа администратора.")
     await States.USER_MESSAGE_3.set()
-    sendAdminText = f"Пользователь @{message.from_user.first_name} оплатил заказ стоимостью {price}"
+    sendAdminText = f"Пользователь @{message.from_user.username} оплатил заказ стоимостью {price}"
     sendImg = message.photo[-1].file_id
 
     accept = InlineKeyboardButton("Принять оплату", callback_data="accept" + "|" + str(message.from_user.id))
