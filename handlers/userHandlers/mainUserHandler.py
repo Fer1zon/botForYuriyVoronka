@@ -17,14 +17,20 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from handlers.userHandlers import keyboard as kb
 
+from importantFiles.config import sendNotificationId
 
+from asyncio import sleep
 
 
 
 
 
 async def viewContent(call:types.CallbackQuery):
+    
     await call.message.edit_reply_markup(reply_markup=None)
+    await sleep(2)
+
+
     with open(Path("utils","messageContent","message1","sendText.txt"), "r", encoding="utf-8") as textFile:
         sendText = textFile.read()
 
@@ -48,6 +54,7 @@ async def viewContent(call:types.CallbackQuery):
 
 async def message2(call:types.CallbackQuery):
     await call.message.edit_reply_markup(reply_markup=None)
+    await sleep(2)
     try:#Удаление прошлой задачи если она существует
         deleteJobId = call.data.split("|")[1]
         scheduler.remove_job(deleteJobId)
@@ -79,6 +86,7 @@ async def message2(call:types.CallbackQuery):
 
 async def message3(call:types.CallbackQuery, state:FSMContext):
     await call.message.edit_reply_markup(reply_markup=None)
+    await sleep(2)
     
     await state.update_data(payStatus = "False")
     try:#Удаление прошлой задачи если она существует
@@ -94,7 +102,12 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
     with open(Path("utils","messageContent","message3","sendVideo.txt"), "r", encoding="utf-8") as videoFile:
         sendVideo = videoFile.read()
 
-    keyboard = InlineKeyboardMarkup(row_width=1).add(kb.tariff9900, kb.tariff54990)
+
+    with open(Path("utils","messageContent","payUrl","url1.txt"), encoding="utf-8") as urlFile:
+        url = urlFile.read()
+
+    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     msg = await call.message.answer_video(caption=sendText, video=sendVideo, reply_markup=keyboard)
 
@@ -106,6 +119,24 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
 
     
     await States.USER_MESSAGE_3.set()
+
+
+
+async def askQuestion(call:types.CallbackQuery):
+    await call.message.answer("Какой у вас вопрос?")
+    await States.USER_ASK_QUESTION.set()
+
+
+
+async def sendQuestion(message:types.Message):
+    await message.answer("Спасибо за ваш вопрос. Мы ответим вам в ближайшее время.")
+    await States.USER_MESSAGE_3.set()
+
+    sendText = f"""
+Вопрос от пользователя @{message.from_user.username}
+{message.text}"""
+
+    await bot.send_message(chat_id=sendNotificationId, text=sendText)
 
 
 

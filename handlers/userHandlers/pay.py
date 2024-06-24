@@ -17,26 +17,30 @@ from importantFiles.config import sendNotificationId
 
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+from appShedulerFunc.Sample import scheduler, sendPodcast
+
+from asyncio import sleep
 
 
 
-async def payClick(call:types.CallbackQuery, state:FSMContext):
-    await call.message.edit_reply_markup(reply_markup=None)
+
+async def paidClick(call:types.CallbackQuery, state:FSMContext):
+    await sleep(1)
+    
     await state.update_data(payStatus = "True")
-    with open(Path("utils", "messageContent", "payUrl", call.data + ".txt"), "r", encoding="utf-8") as textFile:
-        sendUrl = textFile.read()
 
 
-    await state.update_data(price = call.data)
+    
 
 
     sendText = f"""
-Оплатите заказ по ссылке: {sendUrl}
-После вернитесь в этот чат, и отправьте в чат скриншот оплаты.
+Спасибо. Информация для подключения у вас на почте
 """
     
     await call.message.answer(sendText)
-    await States.GET_PAY_IMG.set()
+
+    # scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id])
+    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=15), args=[call.from_user.id])
 
 
 

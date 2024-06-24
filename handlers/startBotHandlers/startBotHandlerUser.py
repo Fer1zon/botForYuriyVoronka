@@ -1,6 +1,6 @@
 from aiogram import types
 
-from aiogram.dispatcher import Dispatcher
+from aiogram.dispatcher import Dispatcher, FSMContext
 from aiogram.dispatcher.filters.state import StatesGroup, State
 
 from pathlib import Path
@@ -16,11 +16,13 @@ from importantFiles.config import channelLink, channel, sendNotificationId
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
+from asyncio import sleep
 
 
 
-
-async def startBotHandlerUser(message : types.Message):
+async def startBotHandlerUser(message : types.Message, state : FSMContext):
+    await sleep(2)
+    await state.update_data(payStatus = "False")
     
     with open(Path("utils","messageContent","startMessageContent","textStartMessage.txt"), "r", encoding="utf-8") as textFile:
         sendText = textFile.read()
@@ -37,9 +39,13 @@ async def startBotHandlerUser(message : types.Message):
 
 
 async def checkSubscribe(call:types.CallbackQuery):
+    
     user_channel_status = await bot.get_chat_member(chat_id=channel, user_id=call.from_user.id)
     if user_channel_status["status"] == 'left':
         return await call.answer("Вы не подписаны на канал")
+    
+
+    await call.message.edit_reply_markup(reply_markup=None)
     
     await bot.send_message(chat_id=sendNotificationId, text = f"@{call.from_user.username} подписался")
     

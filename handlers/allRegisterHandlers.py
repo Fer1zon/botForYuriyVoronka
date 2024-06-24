@@ -17,8 +17,8 @@ from aiogram import types
 
 from handlers.otherHandlers.mainOtherHandler import getPhotoId, getVideoId, getVoiceId, getAudioId
 
-from handlers.userHandlers.mainUserHandler import viewContent, message2, message3
-from handlers.userHandlers.pay import payClick, getPayImg
+from handlers.userHandlers.mainUserHandler import viewContent, message2, message3, askQuestion, sendQuestion
+from handlers.userHandlers.pay import paidClick, getPayImg
 
 
 
@@ -30,7 +30,7 @@ from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVide
 
 def registerStartHandler(dp:Dispatcher):#Регистратор хандлеров относящихся к началу пользования ботом
     dp.register_message_handler(startBotHandlerAdmin,lambda msg: msg.from_user.id in adminId,  commands=["start", "help"], state = "*")
-    dp.register_message_handler(startBotHandlerUser, commands="start")
+    dp.register_message_handler(startBotHandlerUser, commands="start", state = "*")
     
     
 
@@ -49,8 +49,11 @@ def registerUserHandler(dp:Dispatcher):#Регистрация юзерских 
     dp.register_callback_query_handler(message2, lambda call: call.data.split("|")[0] == "nextMessage2", state = States.USER_MESSAGE_1)
     dp.register_callback_query_handler(message3, lambda call: call.data.split("|")[0] == "nextMessage3", state = States.USER_MESSAGE_2)
 
-    dp.register_callback_query_handler(payClick, lambda call: call.data in ['9990', "54990", "10990", "39990"], state = States.USER_MESSAGE_3)
+    dp.register_callback_query_handler(paidClick, lambda call: call.data == "paid", state = [States.USER_MESSAGE_3, States.GET_PAY_IMG])
     dp.register_message_handler(getPayImg, content_types="photo", state = States.GET_PAY_IMG)
+
+    dp.register_callback_query_handler(askQuestion, lambda call: call.data == "askQuestion", state = States.USER_MESSAGE_3)
+    dp.register_message_handler(sendQuestion, content_types="text", state=States.USER_ASK_QUESTION)
 
 
 

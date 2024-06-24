@@ -14,7 +14,7 @@ from handlers.userHandlers import keyboard as kb
 
 from asyncio import sleep
 
-from aiogram.types import InlineKeyboardMarkup
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from aiogram.dispatcher import FSMContext
 
@@ -49,7 +49,12 @@ async def editMessageAfter3Hours(chat_id, message_id, state):
 
     if payStatus == "True":
         return
-    keyboard = InlineKeyboardMarkup(row_width=1).add(kb.tariff10990, kb.tariff54990)
+    with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
+        url = urlFile.read()
+
+    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
+
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
 
 
@@ -57,7 +62,7 @@ async def editMessageAfter3Hours(chat_id, message_id, state):
     scheduler.add_job(editMessageAfter24Hours, "date", run_date = datetime.now() + timedelta(seconds=30), args=[chat_id, message_id, state])
     # await sleep(30)
     await sleep(10)
-    await bot.edit_message_caption(chat_id=chat_id, message_id=message_id, caption = "Стоимость повышена на +1000 рублей", reply_markup=keyboard)
+    await bot.send_message(chat_id=chat_id, text = "Стоимость повышена на +1000 рублей")
 
 
 async def editMessageAfter24Hours(chat_id, message_id, state):
@@ -69,7 +74,11 @@ async def editMessageAfter24Hours(chat_id, message_id, state):
         return
     
 
-    keyboard = InlineKeyboardMarkup(row_width=1).add(kb.tariff39990, kb.tariff54990)
+    with open(Path("utils","messageContent","payUrl","url3.txt"), encoding="utf-8") as urlFile:
+        url = urlFile.read()
+
+    tariff = InlineKeyboardButton("ВЫБРАТЬ ТАРИФ", url=url)
+    keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
 
@@ -77,7 +86,7 @@ async def editMessageAfter24Hours(chat_id, message_id, state):
 
     # await sleep(30)
     await sleep(10)
-    await bot.edit_message_caption(chat_id=chat_id, message_id=message_id, caption = "Скидка не доступна", reply_markup=keyboard)
+    await bot.send_message(chat_id=chat_id, text = "Скидка не доступна", reply_markup=keyboard)
 
 
 
@@ -97,7 +106,11 @@ async def sendMessageAfter14Days(chat_id, state):
 
     sendText = "Цена снижена до 10990 на 24 часа"
 
-    keyboard = InlineKeyboardMarkup(row_width=1).add(kb.tariff10990, kb.tariff54990)
+    with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
+        url = urlFile.read()
+
+    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     msg = await bot.send_message(chat_id=chat_id, text=sendText, reply_markup=keyboard)
 
@@ -143,7 +156,11 @@ async def sendMessageAfter6Hours(chat_id, state):
     with open(Path("utils","messageContent","podcastWithStudent","audio.txt"), "r", encoding="UTF-8") as audioFile:
         sendAudio = audioFile.read()
 
-    keyboard = InlineKeyboardMarkup(row_width=1).add(kb.tariff10990, kb.tariff54990)
+    with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
+        url = urlFile.read()
+
+    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     await bot.send_audio(chat_id=chat_id, audio=sendAudio, reply_markup=keyboard)
 
@@ -158,7 +175,12 @@ async def sendPodcast(chat_id):
     with open(Path("utils","messageContent","podcastWithStudent","audio.txt"), "r", encoding="UTF-8") as audioFile:
         sendAudio = audioFile.read()
 
-    await bot.send_audio(chat_id=chat_id, audio=sendAudio)
+    with open(Path("utils","messageContent","podcastWithStudent","sendText.txt"), "r", encoding="UTF-8") as textFile:
+        sendText = textFile.read()
+
+    
+
+    await bot.send_audio(chat_id=chat_id, caption=sendText, audio=sendAudio)
 
     
 

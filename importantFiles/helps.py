@@ -36,6 +36,7 @@ class States(StatesGroup):  # Создаём состояния
 
     GET_PAY_IMG = State()#Ожидание фото оплаты
 
+    USER_ASK_QUESTION = State()
 
 
 

@@ -124,7 +124,7 @@ async def editUrl1(message : types.message):
         return await message.answer("Вы ввели не валидную ссылку")
     
 
-    with open(Path("utils","messageContent","payUrl","9990.txt"), "w", encoding="utf-8") as textFile:
+    with open(Path("utils","messageContent","payUrl","url1.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
     await message.answer("Ссылка успешно изменена")
@@ -137,7 +137,7 @@ async def editUrl2(message : types.message):
         return await message.answer("Вы ввели не валидную ссылку")
     
     
-    with open(Path("utils","messageContent","payUrl","54990.txt"), "w", encoding="utf-8") as textFile:
+    with open(Path("utils","messageContent","payUrl","url2.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
     await message.answer("Ссылка успешно изменена")
@@ -151,7 +151,7 @@ async def editUrl3(message : types.message):
         return await message.answer("Вы ввели не валидную ссылку")
     
     
-    with open(Path("utils","messageContent","payUrl","10990.txt"), "w", encoding="utf-8") as textFile:
+    with open(Path("utils","messageContent","payUrl","url3.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
     await message.answer("Ссылка успешно изменена")
@@ -165,7 +165,7 @@ async def editUrl4(message : types.message):
         return await message.answer("Вы ввели не валидную ссылку")
     
     
-    with open(Path("utils","messageContent","payUrl","39990.txt"), "w", encoding="utf-8") as textFile:
+    with open(Path("utils","messageContent","payUrl","3url1.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
     await message.answer("Ссылка успешно изменена")
