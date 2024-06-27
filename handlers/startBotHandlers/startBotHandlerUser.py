@@ -22,7 +22,7 @@ from asyncio import sleep
 
 async def startBotHandlerUser(message : types.Message, state : FSMContext):
     await sleep(2)
-    await state.update_data(payStatus = "False")
+    await state.update_data(payStatus = "False", gettingPodcast = "False")
     
     with open(Path("utils","messageContent","startMessageContent","textStartMessage.txt"), "r", encoding="utf-8") as textFile:
         sendText = textFile.read()
@@ -30,8 +30,8 @@ async def startBotHandlerUser(message : types.Message, state : FSMContext):
     with open(Path("utils","messageContent","startMessageContent","imgStartMessage.txt"), "r", encoding="utf-8") as imgFile:
         sendImg = imgFile.read()
 
-    subscribe = InlineKeyboardButton("Подписаться", url = channelLink)
-    check = InlineKeyboardButton("Готово", callback_data = "check")
+    subscribe = InlineKeyboardButton("Подписаться на Телеграм ❤️", url = channelLink)
+    check = InlineKeyboardButton("Готово ✅", callback_data = "check")
 
     keyboard = InlineKeyboardMarkup(row_width=1).add(subscribe, check)
     await message.answer_photo(caption=sendText, photo=sendImg, reply_markup=keyboard)
@@ -55,7 +55,7 @@ async def checkSubscribe(call:types.CallbackQuery):
     with open(Path("utils","messageContent","messageAfterFirstMessage","sendText.txt"), "r", encoding="utf-8") as textFile:
         sendText = textFile.read()
 
-    view = InlineKeyboardButton("Смотреть", callback_data = "view")
+    view = InlineKeyboardButton("Приятного просмотра ▶️", callback_data = "view")
     keyboard = InlineKeyboardMarkup(row_width=1).add(view)
     await call.message.answer_photo(caption=sendText, photo=sendImg, reply_markup = keyboard)
 

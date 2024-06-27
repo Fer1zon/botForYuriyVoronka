@@ -54,9 +54,12 @@ async def editHelloImg(message : types.message, state:FSMContext):
 
 
 
-async def editText0(message : types.message, state:FSMContext):
+async def editText0(message : types.Message, state:FSMContext):
     if len(message.get_args()) == 0:
         return await message.answer("Вы не указали текст")
+    
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
     
     with open(Path("utils","messageContent","messageAfterFirstMessage","sendText.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
@@ -73,6 +76,10 @@ async def editImg0(message : types.message, state:FSMContext):
 async def editText1(message : types.message, state:FSMContext):
     if len(message.get_args()) == 0:
         return await message.answer("Вы не указали текст")
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
+    
+    
     
     with open(Path("utils","messageContent","message1","sendText.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
@@ -89,6 +96,9 @@ async def editText2(message : types.message, state:FSMContext):
     if len(message.get_args()) == 0:
         return await message.answer("Вы не указали текст")
     
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
+    
     with open(Path("utils","messageContent","message2","sendText.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
         
@@ -103,6 +113,9 @@ async def editVideo2(message : types.message, state:FSMContext):
 async def editText3(message : types.message, state:FSMContext):
     if len(message.get_args()) == 0:
         return await message.answer("Вы не указали текст")
+    
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
     
     with open(Path("utils","messageContent","message3","sendText.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
@@ -175,6 +188,9 @@ async def editThanksText(message : types.message):
     if len(message.get_args()) == 0:
         return await message.answer("Вы не указали текст")
     
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
+    
     with open(Path("utils","messageContent","thanksForPay.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
@@ -192,6 +208,34 @@ async def editReminderVideo(message : types.message, state:FSMContext):
     await state.update_data(videoPath = Path("utils","messageContent","circularMessage","video.txt"))
     await message.answer("Отправьте видео")
     await States.ADMIN_VIDEO.set()
+
+
+async def editPodcastTextNotPay(message : types.message):
+    if len(message.get_args()) == 0:
+        return await message.answer("Вы не указали текст")
+    
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
+    
+    with open(Path("utils","messageContent","podcastWithStudent","sendTextIfNotPay.txt"), "w", encoding="utf-8") as textFile:
+        textFile.write(message.get_args())
+
+
+    await message.answer("Текст успешно изменён")
+
+
+async def editPodcastTextPay(message : types.message):
+    if len(message.get_args()) == 0:
+        return await message.answer("Вы не указали текст")
+    
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
+    
+    with open(Path("utils","messageContent","podcastWithStudent","sendTextIfPay.txt"), "w", encoding="utf-8") as textFile:
+        textFile.write(message.get_args())
+
+
+    await message.answer("Текст успешно изменён")
 
 
 

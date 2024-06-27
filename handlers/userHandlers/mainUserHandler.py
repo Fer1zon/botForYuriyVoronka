@@ -42,7 +42,7 @@ async def viewContent(call:types.CallbackQuery):
 
     job_id = f"{call.from_user.id}CircularVideo"
 
-    nextButton = InlineKeyboardButton("СЛЕДУЮЩЕЕ ВИДЕО", callback_data = "nextMessage2|" + job_id)
+    nextButton = InlineKeyboardButton("Смотреть дальше ⏩", callback_data = "nextMessage2|" + job_id)
     keyboard = InlineKeyboardMarkup().add(nextButton)
 
     scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(seconds=20), id = job_id, args=[call.from_user.id, sendVideo1])
@@ -74,7 +74,7 @@ async def message2(call:types.CallbackQuery):
 
     job_id = f"{call.from_user.id}CircularVideo"
 
-    nextButton = InlineKeyboardButton("СЛЕДУЮЩЕЕ ВИДЕО", callback_data = "nextMessage3|" + job_id)
+    nextButton = InlineKeyboardButton("Смотреть дальше ⏩", callback_data = "nextMessage3|" + job_id)
     keyboard = InlineKeyboardMarkup().add(nextButton)
 
     scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(seconds=20), id = job_id, args=[call.from_user.id, sendVideo1])
@@ -115,7 +115,7 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
     #scheduler.add_job(editMessageAfter3Hours, "date", run_date = datetime.now() + timedelta(hours = 3), args=[call.from_user.id, msg.message_id, state])
 
     #scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state])
-    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(seconds=20), args=[call.from_user.id, state])
+    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(seconds=20), args=[call.from_user.id, state, msg.message_id, []])
 
     
     await States.USER_MESSAGE_3.set()

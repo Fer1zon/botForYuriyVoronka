@@ -23,7 +23,7 @@ cur = conn.cursor()
 
 
 
-bot = Bot(token=config.TEST_TOKEN)
+bot = Bot(token=config.TEST_TOKEN, parse_mode="HTML")
 dp = Dispatcher(bot,storage=MemoryStorage())
 
 class States(StatesGroup):  # Создаём состояния
