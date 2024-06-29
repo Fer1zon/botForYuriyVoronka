@@ -45,8 +45,8 @@ async def paidClick(call:types.CallbackQuery, state:FSMContext):
     
     await call.message.answer(sendText)
 
-    # scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id])
-    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=15), args=[call.from_user.id, "True", gettingPodcast])
+    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id])
+    #scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=15), args=[call.from_user.id, "True", gettingPodcast])
 
 
 
