@@ -52,6 +52,19 @@ async def editHelloImg(message : types.message, state:FSMContext):
     await message.answer("Отправьте изображение")
     await States.ADMIN_IMG.set()
 
+async def editHelloText(message : types.message):
+    if len(message.get_args()) == 0:
+        return await message.answer("Вы не указали текст")
+    
+    elif len(message.get_args()) > 1024:
+        await message.answer("Текст не должен быть длиннее 1024 символов")
+    
+    with open(Path("utils","messageContent","startMessageContent","textStartMessage.txt"), "w", encoding="utf-8") as textFile:
+        textFile.write(message.get_args())
+
+    await message.answer("Текст успешно изменён")
+
+
 
 
 async def editText0(message : types.Message, state:FSMContext):

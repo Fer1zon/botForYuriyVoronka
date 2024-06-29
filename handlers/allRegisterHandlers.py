@@ -24,7 +24,7 @@ from handlers.userHandlers.pay import paidClick, getPayImg
 
 
 
-from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcast, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay
+from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcast, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay, editHelloText
 
 
 
@@ -60,6 +60,7 @@ def registerUserHandler(dp:Dispatcher):#Регистрация юзерских 
 
 def registerAdminHandler(dp:Dispatcher):#Регистрация админ хандлеров
     dp.register_message_handler(editHelloImg, commands="edit_hello_img", state = States.ADMIN_MAIN_MENU)
+    dp.register_message_handler(editHelloText, commands="edit_hello_text", state = States.ADMIN_MAIN_MENU)
 
     dp.register_message_handler(editText0, commands="edit_text_0", state = States.ADMIN_MAIN_MENU)
     dp.register_message_handler(editImg0, commands="edit_img_0", state = States.ADMIN_MAIN_MENU)
