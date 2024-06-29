@@ -35,13 +35,16 @@ async def sendCircularVideo(chat_id, video_id):
 
 
 
-scheduler = AsyncIOScheduler({
-    
-    'apscheduler.jobstores.default': {
-        'type': 'sqlalchemy',
-        'url': 'sqlite:///importantFiles/dataBase/data_base.db'
-    }
-})
+#scheduler = AsyncIOScheduler({
+#    
+#    'apscheduler.jobstores.default': {
+#        'type': 'sqlalchemy',
+#        'url': 'sqlite:///importantFiles/dataBase/data_base.db'
+#    }
+#})
+
+scheduler = AsyncIOScheduler()
+
 
 
 async def editMessageAfter3Hours(chat_id, message_id, state):
@@ -53,7 +56,7 @@ async def editMessageAfter3Hours(chat_id, message_id, state):
     with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
-    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    tariff = InlineKeyboardButton("Тариф «Халява» 🤑", url=url)
     keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
@@ -81,7 +84,7 @@ async def editMessageAfter24Hours(chat_id, message_id, state, deleteMessages:lis
     with open(Path("utils","messageContent","payUrl","url3.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
-    tariff = InlineKeyboardButton("ВЫБРАТЬ ТАРИФ", url=url)
+    tariff = InlineKeyboardButton("Выбрать тариф ➡️", url=url)
     keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
@@ -123,7 +126,7 @@ async def sendMessageAfter14Days(chat_id, state, message_id, deleteMessages:list
     with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
-    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    tariff = InlineKeyboardButton("Тариф «Халява» 🤑", url=url)
     keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     msg = await bot.edit_message_reply_markup(chat_id=chat_id, message_id=message_id,reply_markup=keyboard)
@@ -151,7 +154,7 @@ async def deleteMessageAfter24hours(chat_id, message_id, state, deleteMessages:l
     with open(Path("utils","messageContent","payUrl","url3.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
-    tariff = InlineKeyboardButton("ВЫБРАТЬ ТАРИФ", url=url)
+    tariff = InlineKeyboardButton("Выбрать тариф ➡️", url=url)
     keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
@@ -186,7 +189,7 @@ async def sendMessageAfter6Hours(chat_id, state, message_id, deleteMessages:list
     with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
-    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    tariff = InlineKeyboardButton("Тариф «Халява» 🤑", url=url)
     keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     if payStatus == "False":

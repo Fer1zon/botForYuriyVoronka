@@ -1,0 +1,72 @@
+Updates were skipped successfully.
+Task exception was never retrieved
+future: <Task finished name='Task-58' coro=<Dispatcher._process_polling_updates() done, defined at /root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py:410> exception=ConflictingIdError('Job identifier (6646308719CircularVideo) conflicts with an existing job')>
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 418, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 236, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 49, in viewContent
+    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, args=[call.from_user.id, sendVideo1])
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 457, in add_job
+    self._real_add_job(job, jobstore, replace_existing)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 881, in _real_add_job
+    store.add_job(job)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/jobstores/memory.py", line 41, in add_job
+    raise ConflictingIdError(job.id)
+apscheduler.jobstores.base.ConflictingIdError: 'Job identifier (6646308719CircularVideo) conflicts with an existing job'
+Updates were skipped successfully.
+Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<Dispatcher._process_polling_updates() done, defined at /root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py:410> exception=ValueError('The following arguments have not been supplied: message_id, deleteMessages')>
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 418, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 236, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 117, in message3
+    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state])
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 448, in add_job
+    job = Job(self, **job_kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 49, in __init__
+    self._modify(id=id or uuid4().hex, **kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 180, in _modify
+    check_callable_args(func, args, kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/util.py", line 372, in check_callable_args
+    raise ValueError('The following arguments have not been supplied: %s' %
+ValueError: The following arguments have not been supplied: message_id, deleteMessages
+Task exception was never retrieved
+future: <Task finished name='Task-95' coro=<Dispatcher._process_polling_updates() done, defined at /root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py:410> exception=ValueError('The following arguments have not been supplied: message_id, deleteMessages')>
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 418, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 236, in process_updates
+    return await asyncio.gather(*tasks)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in process_update
+    return await self.callback_query_handlers.notify(update.callback_query)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 117, in message3
+    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state])
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 448, in add_job
+    job = Job(self, **job_kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 49, in __init__
+    self._modify(id=id or uuid4().hex, **kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 180, in _modify
+    check_callable_args(func, args, kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/util.py", line 372, in check_callable_args
+    raise ValueError('The following arguments have not been supplied: %s' %
+ValueError: The following arguments have not been supplied: message_id, deleteMessages

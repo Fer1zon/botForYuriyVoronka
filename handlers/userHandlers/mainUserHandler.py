@@ -46,7 +46,7 @@ async def viewContent(call:types.CallbackQuery):
     keyboard = InlineKeyboardMarkup().add(nextButton)
 
     #scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(seconds=20), id = job_id, args=[call.from_user.id, sendVideo1])
-    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, args=[call.from_user.id, sendVideo1])
+    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, replace_existing=True, args=[call.from_user.id, sendVideo1])
     
     await call.message.answer_video(caption=sendText, video=sendVideo, reply_markup=keyboard)
     await States.USER_MESSAGE_1.set()
@@ -78,7 +78,7 @@ async def message2(call:types.CallbackQuery):
     keyboard = InlineKeyboardMarkup().add(nextButton)
 
     #scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(seconds=20), id = job_id, args=[call.from_user.id, sendVideo1])
-    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, args=[call.from_user.id, sendVideo1])
+    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, replace_existing=True, args=[call.from_user.id, sendVideo1])
     
     await call.message.answer_video(caption=sendText, video=sendVideo, reply_markup=keyboard)
     await States.USER_MESSAGE_2.set()
@@ -106,7 +106,7 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
     with open(Path("utils","messageContent","payUrl","url1.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
-    tariff = InlineKeyboardButton("Тариф ХАЛЯВА", url=url)
+    tariff = InlineKeyboardButton("Тариф «Халява» 🤑", url=url)
     keyboard = InlineKeyboardMarkup(row_width=1).add(tariff, kb.paid, kb.askQuestion)
 
     msg = await call.message.answer_video(caption=sendText, video=sendVideo, reply_markup=keyboard)
