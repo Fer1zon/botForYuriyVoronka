@@ -33,6 +33,9 @@ async def paidClick(call:types.CallbackQuery, state:FSMContext):
         gettingPodcast = data["gettingPodcast"]
 
 
+    await state.update_data(gettingPodcast = "True")
+
+
     
 
 

@@ -123,7 +123,7 @@ async def editText3(message : types.message, state:FSMContext):
     await message.answer("Текст успешно изменён")
 
 async def editVideo3(message : types.message, state:FSMContext):
-    await state.update_data(videoPath = Path("utils","messageContent","message1","sendVideo.txt"))
+    await state.update_data(videoPath = Path("utils","messageContent","message3","sendVideo.txt"))
     await message.answer("Отправьте видео")
     await States.ADMIN_VIDEO.set()
 
