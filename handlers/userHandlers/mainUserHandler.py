@@ -114,7 +114,7 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
     #scheduler.add_job(editMessageAfter3Hours, "date", run_date = datetime.now() + timedelta(seconds=20), args=[call.from_user.id, msg.message_id, state])
     scheduler.add_job(editMessageAfter3Hours, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id, msg.message_id, state])
 
-    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state])
+    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state, msg.message_id, []])
     #scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(seconds=20), args=[call.from_user.id, state, msg.message_id, []])
 
     
