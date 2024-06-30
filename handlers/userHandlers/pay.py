@@ -21,6 +21,8 @@ from appShedulerFunc.Sample import scheduler, sendPodcast
 
 from asyncio import sleep
 
+from pathlib import Path
+
 
 
 
@@ -38,10 +40,9 @@ async def paidClick(call:types.CallbackQuery, state:FSMContext):
 
     
 
+    with open(Path("utils","messageContent","thanksForPay.txt"), "r", encoding="UTF-8") as textFile:
 
-    sendText = f"""
-Спасибо. Информация для подключения у вас на почте
-"""
+        sendText = textFile.read()
     
     await call.message.answer(sendText)
 
