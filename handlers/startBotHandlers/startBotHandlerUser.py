@@ -47,7 +47,7 @@ async def checkSubscribe(call:types.CallbackQuery):
 
     await call.message.edit_reply_markup(reply_markup=None)
     
-    await bot.send_message(chat_id=sendNotificationId, text = f"@{call.from_user.username} подписался")
+    await bot.send_message(chat_id=sendNotificationId, text = f"@{call.from_user.username} <b>подписался на канал</b>")
     
     with open(Path("utils","messageContent","messageAfterFirstMessage","sendImg.txt"), "r", encoding="utf-8") as imgFile:
         sendImg = imgFile.read()
@@ -60,12 +60,3 @@ async def checkSubscribe(call:types.CallbackQuery):
     await call.message.answer_photo(caption=sendText, photo=sendImg, reply_markup = keyboard)
 
     await States.USER_VIEW.set()
-
-
-    
-    
-
-
-
-    
-    

@@ -19,20 +19,8 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.dispatcher import FSMContext
 
 
-
-
-
 async def sendCircularVideo(chat_id, video_id):
     await bot.send_video_note(chat_id, video_id)
-
-
-
-
-    
-    
-
-
-
 
 
 #scheduler = AsyncIOScheduler({
@@ -44,7 +32,6 @@ async def sendCircularVideo(chat_id, video_id):
 #})
 
 scheduler = AsyncIOScheduler()
-
 
 
 async def editMessageAfter3Hours(chat_id, message_id, state):
@@ -62,10 +49,9 @@ async def editMessageAfter3Hours(chat_id, message_id, state):
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
 
 
-    
     # await sleep(30)
     # await sleep(10)
-    msg1 = await bot.send_message(chat_id=chat_id, text = "Стоимость повышена на +1000 рублей")
+    msg1 = await bot.send_message(chat_id=chat_id, text = "❗️ Стоимость повышена до 10.990 ₽ ❗️ Предложение действует 24 часа 🔥")
 
     scheduler.add_job(editMessageAfter24Hours, "date", run_date = datetime.now() + timedelta(hours=21), args=[chat_id, message_id, state, [msg1.message_id]])
     #scheduler.add_job(editMessageAfter24Hours, "date", run_date = datetime.now() + timedelta(seconds=30), args=[chat_id, message_id, state, [msg1.message_id]])
@@ -79,8 +65,6 @@ async def editMessageAfter24Hours(chat_id, message_id, state, deleteMessages:lis
         payStatus = data["payStatus"]
 
     
-    
-
     with open(Path("utils","messageContent","payUrl","url3.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
 
@@ -90,18 +74,12 @@ async def editMessageAfter24Hours(chat_id, message_id, state, deleteMessages:lis
     await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
 
 
-
     # await sleep(30)
     # await sleep(20)
     for messageId in deleteMessages:
         await bot.delete_message(chat_id=chat_id, message_id=messageId)
 
     # await bot.send_message(chat_id=chat_id, text = "Скидка не доступна", reply_markup=keyboard)
-
-
-
-
-
 
 
 async def sendMessageAfter14Days(chat_id, state, message_id, deleteMessages:list):
@@ -119,9 +97,7 @@ async def sendMessageAfter14Days(chat_id, state, message_id, deleteMessages:list
             pass
     
     
-    
-
-    sendText = "Цена снижена до 10990 на 24 часа"
+    sendText = "Цена снижена до 10.990 ₽ на 24 часа 🔥"
 
     with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
@@ -136,17 +112,12 @@ async def sendMessageAfter14Days(chat_id, state, message_id, deleteMessages:list
     #scheduler.add_job(deleteMessageAfter24hours, "date", run_date = datetime.now() + timedelta(seconds=30), args=[chat_id, msg.message_id, state, [msg1.message_id]])
 
 
-
-
-
-
 async def deleteMessageAfter24hours(chat_id, message_id, state, deleteMessages:list):
 
     state: FSMContext = dp.current_state(chat=chat_id, user=chat_id)
     async with state.proxy() as data:
         payStatus = data["payStatus"]
 
-    
     
     for messageId in deleteMessages:
         await bot.delete_message(chat_id=chat_id, message_id=messageId)
@@ -163,26 +134,13 @@ async def deleteMessageAfter24hours(chat_id, message_id, state, deleteMessages:l
     #scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now() + timedelta(seconds = 70), args=[chat_id, state, message_id, deleteMessages])
 
 
-
-
 async def sendMessageAfter6Hours(chat_id, state, message_id, deleteMessages:list): 
     state: FSMContext = dp.current_state(chat=chat_id, user=chat_id)
     async with state.proxy() as data:
         payStatus = data["payStatus"]
         gettingPodcast = data["gettingPodcast"]
 
-    
-    
-        
 
-    
-    
-
-
-
-
-    
-    
     with open(Path("utils","messageContent","podcastWithStudent","audio.txt"), "r", encoding="UTF-8") as audioFile:
         sendAudio = audioFile.read()
 
@@ -197,9 +155,6 @@ async def sendMessageAfter6Hours(chat_id, state, message_id, deleteMessages:list
         await state.update_data(gettingPodcast = "True")
     scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
     #scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now() + timedelta(seconds=70), args=[chat_id, state, message_id, deleteMessages])
-
-
-
 
 
 async def sendPodcast(chat_id, payStatus = "False", gettingStatus = "False"):
@@ -219,14 +174,4 @@ async def sendPodcast(chat_id, payStatus = "False", gettingStatus = "False"):
             sendText = textFile.read()
 
 
-    
-
     await bot.send_audio(chat_id=chat_id, caption=sendText, audio=sendAudio)
-
-    
-
-
-
-
-
-

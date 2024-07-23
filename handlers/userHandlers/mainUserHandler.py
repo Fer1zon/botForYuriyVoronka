@@ -22,9 +22,6 @@ from importantFiles.config import sendNotificationId
 from asyncio import sleep
 
 
-
-
-
 async def viewContent(call:types.CallbackQuery):
     
     await call.message.edit_reply_markup(reply_markup=None)
@@ -123,40 +120,17 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
 
 
 async def askQuestion(call:types.CallbackQuery):
-    await call.message.answer("Какой у вас вопрос?")
+    await call.message.answer("Какой у вас вопросс?")
     await States.USER_ASK_QUESTION.set()
 
 
 
 async def sendQuestion(message:types.Message):
-    await message.answer("Спасибо за ваш вопрос. Мы ответим вам в ближайшее время.")
+    await message.answer("Спасибо за ваш вопрос. Мы обязательно ответим вам в ближайшее время.")
     await States.USER_MESSAGE_3.set()
 
     sendText = f"""
-Вопрос от пользователя @{message.from_user.username}
+<b>Вопрос от пользователя</b> @{message.from_user.username}:
 {message.text}"""
 
     await bot.send_message(chat_id=sendNotificationId, text=sendText)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
