@@ -141,8 +141,7 @@ async def sendMessageAfter6Hours(chat_id, state, message_id, deleteMessages:list
         gettingPodcast = data["gettingPodcast"]
 
 
-    with open(Path("utils","messageContent","podcastWithStudent","audio.txt"), "r", encoding="UTF-8") as audioFile:
-        sendAudio = audioFile.read()
+    
 
     with open(Path("utils","messageContent","payUrl","url2.txt"), encoding="utf-8") as urlFile:
         url = urlFile.read()
@@ -161,17 +160,23 @@ async def sendPodcast(chat_id, payStatus = "False", gettingStatus = "False"):
     if gettingStatus == "True":
 
         return
-    with open(Path("utils","messageContent","podcastWithStudent","audio.txt"), "r", encoding="UTF-8") as audioFile:
-        sendAudio = audioFile.read()
+    
 
     if payStatus == "False":
 
-        with open(Path("utils","messageContent","podcastWithStudent","sendTextIfNotPay.txt"), "r", encoding="UTF-8") as textFile:
+        with open(Path("utils","messageContent","podcastWithStudent","podcastBeforePay", "sendText.txt"), "r", encoding="UTF-8") as textFile:
             sendText = textFile.read()
 
+
+        with open(Path("utils","messageContent","podcastWithStudent","podcastBeforePay", "audio.txt"), "r", encoding="UTF-8") as audioFile:
+            sendAudio = audioFile.read()
+
     elif payStatus == "True":
-        with open(Path("utils","messageContent","podcastWithStudent","sendTextIfPay.txt"), "r", encoding="UTF-8") as textFile:
+        with open(Path("utils","messageContent","podcastWithStudent","podcastAfterPay", "sendText.txt"), "r", encoding="UTF-8") as textFile:
             sendText = textFile.read()
+
+        with open(Path("utils","messageContent","podcastWithStudent","podcastAfterPay", "audio.txt"), "r", encoding="UTF-8") as audioFile:
+            sendAudio = audioFile.read()
 
 
     await bot.send_audio(chat_id=chat_id, caption=sendText, audio=sendAudio)
