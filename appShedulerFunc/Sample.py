@@ -23,7 +23,7 @@ from aiogram.dispatcher import FSMContext
 
 
 async def sendCircularVideo(chat_id, video_id):
-    await bot.send_video(chat_id, video_id)
+    await bot.send_video_note(chat_id, video_id)
 
 
 

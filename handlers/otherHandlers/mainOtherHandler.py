@@ -23,3 +23,8 @@ async def getVoiceId(message:types.Message):
 
 async def getAudioId(message:types.Message):
     await message.answer(message.audio.file_id)
+
+
+
+async def getNoteId(message:types.Message):
+    await message.answer(message.video_note.file_id)

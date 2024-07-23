@@ -45,8 +45,8 @@ async def viewContent(call:types.CallbackQuery):
     nextButton = InlineKeyboardButton("Смотреть дальше ⏩", callback_data = "nextMessage2|" + job_id)
     keyboard = InlineKeyboardMarkup().add(nextButton)
 
-    #scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(seconds=20), id = job_id, args=[call.from_user.id, sendVideo1])
-    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, replace_existing=True, args=[call.from_user.id, sendVideo1])
+    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(seconds=20), id = job_id, args=[call.from_user.id, sendVideo1])
+    #scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, replace_existing=True, args=[call.from_user.id, sendVideo1])
     
     await call.message.answer_video(caption=sendText, video=sendVideo, reply_markup=keyboard)
     await States.USER_MESSAGE_1.set()

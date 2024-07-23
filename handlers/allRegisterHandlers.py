@@ -15,7 +15,7 @@ from importantFiles.config import adminId
 
 from aiogram import types
 
-from handlers.otherHandlers.mainOtherHandler import getPhotoId, getVideoId, getVoiceId, getAudioId
+from handlers.otherHandlers.mainOtherHandler import getPhotoId, getVideoId, getVoiceId, getAudioId, getNoteId
 
 from handlers.userHandlers.mainUserHandler import viewContent, message2, message3, askQuestion, sendQuestion
 from handlers.userHandlers.pay import paidClick, getPayImg
@@ -29,7 +29,7 @@ from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVide
 
 
 def registerStartHandler(dp:Dispatcher):#Регистратор хандлеров относящихся к началу пользования ботом
-    dp.register_message_handler(startBotHandlerAdmin,lambda msg: msg.from_user.id in adminId,  commands=["start", "help"], state = "*")
+    #dp.register_message_handler(startBotHandlerAdmin,lambda msg: msg.from_user.id in adminId,  commands=["start", "help"], state = "*")
     dp.register_message_handler(startBotHandlerUser, commands="start", state = "*")
     
     
@@ -41,7 +41,7 @@ def registerOtherHandler(dp:Dispatcher):#Регистратор хандлеро
     dp.register_message_handler(getVideoId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.VIDEO, state = "*")
     dp.register_message_handler(getVoiceId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.VOICE, state = "*")
     dp.register_message_handler(getAudioId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.AUDIO, state = "*")
-
+    dp.register_message_handler(getNoteId, content_types=types.ContentType.VIDEO_NOTE, state = "*")
 
 def registerUserHandler(dp:Dispatcher):#Регистрация юзерских хандлеров
     dp.register_callback_query_handler(checkSubscribe, lambda call: call.data == "check", state = States.USER_SUBSCRIBE)
