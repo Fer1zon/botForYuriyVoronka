@@ -11,26 +11,10 @@ from handlers.allRegisterHandlers import finalHandlerRegistrator
 from importantFiles.ExecuteAtStartup.mainExecuteStartup import mainExecuteAtStartupFunction
     
 
-
-
-
 from appShedulerFunc.Sample import scheduler
 
 
-
-
-
 finalHandlerRegistrator(dp)
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':

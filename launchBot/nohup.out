@@ -1,72 +1,1661 @@
 Updates were skipped successfully.
-Task exception was never retrieved
-future: <Task finished name='Task-58' coro=<Dispatcher._process_polling_updates() done, defined at /root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py:410> exception=ConflictingIdError('Job identifier (6646308719CircularVideo) conflicts with an existing job')>
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 16:31:38 UTC], next run at: 2024-06-30 16:31:38 UTC)" raised an exception
 Traceback (most recent call last):
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 418, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 236, in process_updates
-    return await asyncio.gather(*tasks)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 49, in viewContent
-    scheduler.add_job(sendCircularVideo, "date", run_date = datetime.now() + timedelta(minutes=20), id = job_id, args=[call.from_user.id, sendVideo1])
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 457, in add_job
-    self._real_add_job(job, jobstore, replace_existing)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 881, in _real_add_job
-    store.add_job(job)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/jobstores/memory.py", line 41, in add_job
-    raise ConflictingIdError(job.id)
-apscheduler.jobstores.base.ConflictingIdError: 'Job identifier (6646308719CircularVideo) conflicts with an existing job'
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 16:53:36 UTC], next run at: 2024-06-30 16:53:36 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 17:02:51 UTC], next run at: 2024-06-30 17:02:51 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 17:09:17 UTC], next run at: 2024-06-30 17:09:17 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "editMessageAfter3Hours (trigger: date[2024-06-30 20:17:04 UTC], next run at: 2024-06-30 20:17:04 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 62, in editMessageAfter3Hours
+    await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageToEditNotFound: Message to edit not found
+Job "editMessageAfter3Hours (trigger: date[2024-06-30 20:30:42 UTC], next run at: 2024-06-30 20:30:42 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 62, in editMessageAfter3Hours
+    await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageToEditNotFound: Message to edit not found
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 23:17:04 UTC], next run at: 2024-06-30 23:17:04 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 23:30:42 UTC], next run at: 2024-06-30 23:30:42 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "sendMessageAfter6Hours (trigger: date[2024-06-30 23:36:43 UTC], next run at: 2024-06-30 23:36:43 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Job "editMessageAfter24Hours (trigger: date[2024-07-01 10:53:36 UTC], next run at: 2024-07-01 10:53:36 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 90, in editMessageAfter24Hours
+    await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageToEditNotFound: Message to edit not found
+Job "editMessageAfter24Hours (trigger: date[2024-07-01 11:02:51 UTC], next run at: 2024-07-01 11:02:51 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 90, in editMessageAfter24Hours
+    await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageToEditNotFound: Message to edit not found
+Job "editMessageAfter24Hours (trigger: date[2024-07-01 11:09:17 UTC], next run at: 2024-07-01 11:09:17 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 90, in editMessageAfter24Hours
+    await bot.edit_message_reply_markup(chat_id, message_id=message_id, reply_markup=keyboard)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 3252, in edit_message_reply_markup
+    result = await self.request(api.Methods.EDIT_MESSAGE_REPLY_MARKUP, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.MessageToEditNotFound: Message to edit not found
+Job "sendMessageAfter6Hours (trigger: date[2024-07-01 17:19:11 UTC], next run at: 2024-07-01 17:19:11 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/launchBot.py", line 1, in <module>
+    from aiogram.utils import executor
+ModuleNotFoundError: No module named 'aiogram'
 Updates were skipped successfully.
-Task exception was never retrieved
-future: <Task finished name='Task-31' coro=<Dispatcher._process_polling_updates() done, defined at /root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py:410> exception=ValueError('The following arguments have not been supplied: message_id, deleteMessages')>
+Updates were skipped successfully.
+Cause exception while getting updates.
 Traceback (most recent call last):
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 418, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 236, in process_updates
-    return await asyncio.gather(*tasks)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 117, in message3
-    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state])
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 448, in add_job
-    job = Job(self, **job_kwargs)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 49, in __init__
-    self._modify(id=id or uuid4().hex, **kwargs)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 180, in _modify
-    check_callable_args(func, args, kwargs)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/util.py", line 372, in check_callable_args
-    raise ValueError('The following arguments have not been supplied: %s' %
-ValueError: The following arguments have not been supplied: message_id, deleteMessages
-Task exception was never retrieved
-future: <Task finished name='Task-95' coro=<Dispatcher._process_polling_updates() done, defined at /root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py:410> exception=ValueError('The following arguments have not been supplied: message_id, deleteMessages')>
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
 Traceback (most recent call last):
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 418, in _process_polling_updates
-    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 236, in process_updates
-    return await asyncio.gather(*tasks)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 284, in process_update
-    return await self.callback_query_handlers.notify(update.callback_query)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/handler.py", line 117, in notify
-    response = await handler_obj.handler(*args, **partial_data)
-  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 117, in message3
-    scheduler.add_job(sendMessageAfter6Hours, "date", run_date = datetime.now() + timedelta(hours = 6), args=[call.from_user.id, state])
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/schedulers/base.py", line 448, in add_job
-    job = Job(self, **job_kwargs)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 49, in __init__
-    self._modify(id=id or uuid4().hex, **kwargs)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/job.py", line 180, in _modify
-    check_callable_args(func, args, kwargs)
-  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/util.py", line 372, in check_callable_args
-    raise ValueError('The following arguments have not been supplied: %s' %
-ValueError: The following arguments have not been supplied: message_id, deleteMessages
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Updates were skipped successfully.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 119, in check_result
+    exceptions.ConflictError.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.TerminatedByOtherGetUpdates: Terminated by other getupdates request; make sure that only one bot instance is running
+Updates were skipped successfully.
+Job "sendMessageAfter6Hours (trigger: date[2024-07-09 14:15:06 UTC], next run at: 2024-07-09 14:15:06 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Job "sendMessageAfter6Hours (trigger: date[2024-07-09 17:24:47 UTC], next run at: 2024-07-09 17:24:47 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 198, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/launchBot.py", line 10, in <module>
+    from handlers.allRegisterHandlers import finalHandlerRegistrator
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/allRegisterHandlers.py", line 20, in <module>
+    from handlers.userHandlers.mainUserHandler import viewContent, message2, message3, askQuestion, sendQuestion
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../handlers/userHandlers/mainUserHandler.py", line 14, in <module>
+    from appShedulerFunc.Sample import scheduler, sendCircularVideo, editMessageAfter3Hours, sendMessageAfter6Hours
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 54
+    msg1 = await bot.send_message(chat_id=chat_id, text = "❗️Стоимость повышена до +10.990 ₽❗️
+                                                          ^
+SyntaxError: unterminated string literal (detected at line 54)
+Updates were skipped successfully.
+Updates were skipped successfully.
+Job "editMessageAfter3Hours (trigger: date[2024-07-10 16:00:27 UTC], next run at: 2024-07-10 16:00:27 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 54, in editMessageAfter3Hours
+    msg1 = await bot.send_message(chat_id=chat_id, text = "❗️Стоимость повышена до +10.990 ₽❗️<br>Скидка сгорит через 24 часа!🔥")
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 346, in send_message
+    result = await self.request(api.Methods.SEND_MESSAGE, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 115, in check_result
+    exceptions.BadRequest.detect(description)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/utils/exceptions.py", line 140, in detect
+    raise err(cls.text or description)
+aiogram.utils.exceptions.CantParseEntities: Can't parse entities: unsupported start tag "br" at byte offset 64
+Updates were skipped successfully.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Updates were skipped successfully.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Job "sendMessageAfter6Hours (trigger: date[2024-07-11 03:26:12 UTC], next run at: 2024-07-11 03:26:12 UTC)" raised an exception
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/apscheduler/executors/base_py3.py", line 30, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+  File "/root/telegramBot/botForYuriyVoronka/launchBot/../appShedulerFunc/Sample.py", line 156, in sendMessageAfter6Hours
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+TypeError: unsupported operand type(s) for +: 'builtin_function_or_method' and 'datetime.timedelta'
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 111, in check_result
+    raise exceptions.RetryAfter(parameters.retry_after)
+aiogram.utils.exceptions.RetryAfter: Flood control exceeded. Retry in 5 seconds.
+Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 382, in start_polling
+    updates = await self.bot.get_updates(
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 140, in make_request
+    return check_result(method, response.content_type, response.status, await response.text())
+  File "/root/telegramBot/botForYuriyVoronka/.venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 128, in check_result
+    raise exceptions.TelegramAPIError(description)
+aiogram.utils.exceptions.TelegramAPIError: Bad Gateway
