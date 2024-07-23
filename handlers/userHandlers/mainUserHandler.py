@@ -120,8 +120,12 @@ async def message3(call:types.CallbackQuery, state:FSMContext):
 
 
 async def askQuestion(call:types.CallbackQuery):
-    await call.message.answer("Какой у вас вопросс?")
+    await call.message.answer("Какой у вас вопрос?")
     await States.USER_ASK_QUESTION.set()
+
+    await sleep(2 * 60)
+    
+    await States.USER_MESSAGE_3.set()
 
 
 
