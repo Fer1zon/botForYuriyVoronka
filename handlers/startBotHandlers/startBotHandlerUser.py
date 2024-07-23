@@ -36,6 +36,11 @@ async def startBotHandlerUser(message : types.Message, state : FSMContext):
     keyboard = InlineKeyboardMarkup(row_width=1).add(subscribe, check)
     await message.answer_photo(caption=sendText, photo=sendImg, reply_markup=keyboard)
     await States.USER_SUBSCRIBE.set()
+    # await States.USER_MESSAGE_3.set()
+
+    # kb = InlineKeyboardMarkup().add(InlineKeyboardButton("s", callback_data="paid"))
+
+    # await message.answer("s", reply_markup=kb)
 
 
 async def checkSubscribe(call:types.CallbackQuery):

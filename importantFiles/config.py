@@ -11,7 +11,7 @@ adminId = [5530562487, 542443518]
 
 channel = "@millionlinere"
 channelLink = "https://t.me/millionlinere"
-sendNotificationId = 542443518
+sendNotificationId = 5530562487
 
 
 dataBasePath = os.path.dirname(__file__) + '/dataBase/data_base.db'

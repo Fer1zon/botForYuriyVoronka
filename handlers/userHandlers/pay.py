@@ -29,37 +29,35 @@ from pathlib import Path
 async def paidClick(call:types.CallbackQuery, state:FSMContext):
     await sleep(1)
     
-    await state.update_data(payStatus = "True")
+    # await state.update_data(payStatus = "True")
 
     async with state.proxy() as data:
         gettingPodcast = data["gettingPodcast"]
 
-
-    await state.update_data(gettingPodcast = "True")
-
-
+    #await call.message.edit_reply_markup(reply_markup=None)
     
-
-    with open(Path("utils","messageContent","thanksForPay.txt"), "r", encoding="UTF-8") as textFile:
-
-        sendText = textFile.read()
-    
+    sendText = "Оплатите товар по ссылке выше. И пришлите сюда в чат скриншот об оплате для подтверждения"
     await call.message.answer(sendText)
+    await States.GET_PAY_IMG.set()
 
-    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id])
-    #scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=15), args=[call.from_user.id, "True", gettingPodcast])
+    await sleep(5 * 60)
+    await States.USER_MESSAGE_3.set()
+
+
+    
+
+    
 
 
 
 async def getPayImg(message:types.Message, state:FSMContext):
     
     await state.update_data(payStatus = "True")
-    async with state.proxy() as data:
-        price = data["price"]
+    
 
     await message.answer("Ваша заявка отправлена. Ожидайте ответа администратора.")
     await States.USER_MESSAGE_3.set()
-    sendAdminText = f"Пользователь @{message.from_user.username} оплатил заказ стоимостью {price}"
+    sendAdminText = f"Пользователь @{message.from_user.username} оплатил заказ"
     sendImg = message.photo[-1].file_id
 
     accept = InlineKeyboardButton("Принять оплату", callback_data="accept" + "|" + str(message.from_user.id))

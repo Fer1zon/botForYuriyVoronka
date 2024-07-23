@@ -24,13 +24,17 @@ async def acceptApplication(call: types.CallbackQuery):
     userId = call.data.split("|")[1]
     # state: FSMContext = dp.current_state(chat=userId, user=userId)
     
+    state: FSMContext = dp.current_state(chat=userId, user=userId)
 
-    with open(Path("utils","messageContent","thanksForPay.txt"), "r", encoding="utf-8") as textFile:
-        sendUserText = textFile.read()
+    await state.update_data(payStatus = "False", gettingPodcast = "True")
+    with open(Path("utils","messageContent","thanksForPay.txt"), "r", encoding="UTF-8") as textFile:
 
-    await bot.send_message(chat_id=userId, text=sendUserText)
-    # scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[userId])
-    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=20), args=[userId])
+        sendText = textFile.read()
+    
+    await call.message.answer(sendText)
+
+    #scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id, "True", "False"])
+    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=15), args=[call.from_user.id, "True", "False"])
 
 async def declineApplication(call: types.CallbackQuery):
     await call.message.delete()
