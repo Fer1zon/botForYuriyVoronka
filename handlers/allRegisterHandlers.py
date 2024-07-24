@@ -24,7 +24,10 @@ from handlers.userHandlers.pay import paidClick, getPayImg
 
 
 
-from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcastAfterPay, editPodcastBeforePay, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay, editHelloText, editCircularVideo
+from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcastAfterPay, editPodcastBeforePay, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay, editHelloText, editCircularVideo, mailing
+
+
+from adminHandlers.mailing import getTextMailing, getPhotoMailing, getVoiceMailing, getVideoMailing, startMailing
 
 
 
@@ -37,11 +40,12 @@ def registerStartHandler(dp:Dispatcher):#Регистратор хандлеро
 
 
 def registerOtherHandler(dp:Dispatcher):#Регистратор хандлеров относящихся к прочему(Выходы, бэки и тп)
-    dp.register_message_handler(getPhotoId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.PHOTO, state = "*")
-    dp.register_message_handler(getVideoId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.VIDEO, state = "*")
-    dp.register_message_handler(getVoiceId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.VOICE, state = "*")
-    dp.register_message_handler(getAudioId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.AUDIO, state = "*")
-    dp.register_message_handler(getNoteId, content_types=types.ContentType.VIDEO_NOTE, state = "*")
+    # dp.register_message_handler(getPhotoId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.PHOTO, state = "*")
+    # dp.register_message_handler(getVideoId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.VIDEO, state = "*")
+    # dp.register_message_handler(getVoiceId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.VOICE, state = "*")
+    # dp.register_message_handler(getAudioId, lambda msg: msg.from_user.id in adminId, content_types=types.ContentType.AUDIO, state = "*")
+    # dp.register_message_handler(getNoteId, content_types=types.ContentType.VIDEO_NOTE, state = "*")
+    pass
 
 def registerUserHandler(dp:Dispatcher):#Регистрация юзерских хандлеров
     dp.register_callback_query_handler(checkSubscribe, lambda call: call.data == "check", state = States.USER_SUBSCRIBE)
@@ -97,6 +101,15 @@ def registerAdminHandler(dp:Dispatcher):#Регистрация админ ха�
 
     dp.register_callback_query_handler(acceptApplication, lambda call: call.data.split("|")[0] == "accept", state = "*")
     dp.register_callback_query_handler(declineApplication, lambda call: call.data.split("|")[0] == "decline", state = "*")
+
+
+    dp.register_message_handler(mailing, commands="mailing", state = States.ADMIN_MAIN_MENU)
+    dp.register_message_handler(startMailing, commands="start_mailing", state = States.ADMIN_MAILING)
+
+    dp.register_message_handler(getTextMailing, content_types="text", state = States.ADMIN_MAILING)
+    dp.register_message_handler(getPhotoMailing, content_types="photo", state = States.ADMIN_MAILING)
+    dp.register_message_handler(getVoiceMailing, content_types="voice", state = States.ADMIN_MAILING)
+    dp.register_message_handler(getVideoMailing, content_types="video", state = States.ADMIN_MAILING)
 
 
 

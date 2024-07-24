@@ -13,6 +13,8 @@ from importantFiles.helps import States, dp,bot, cur,conn
 
 from importantFiles.config import channelLink, channel, sendNotificationId
 
+from utils.function.database.users import checkUserInDB, addInDB
+
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -21,6 +23,9 @@ from asyncio import sleep
 
 
 async def startBotHandlerUser(message : types.Message, state : FSMContext):
+    if not checkUserInDB(message.from_user.id, cur):
+        addInDB(message.from_user.id, cur, conn)
+        
     await sleep(2)
     await state.update_data(payStatus = "False", gettingPodcast = "False")
     

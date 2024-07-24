@@ -46,3 +46,5 @@ class States(StatesGroup):  # Создаём состояния
     ADMIN_VIDEO = State()
     ADMIN_AUDIO = State()
     ADMIN_CIRCULAR = State()
+
+    ADMIN_MAILING = State()

@@ -353,6 +353,20 @@ async def editCircularVideo(message : types.Message, state:FSMContext):
 
 
 
+async def mailing(message:types.Message, state:FSMContext):
+    await state.update_data(text = None, content = None)
+
+    sendText = "Отправляй в чат Текст/Фото/Видео/Голосовое. Когда сообщение будет готово, отправь в чат /start_mailing"
+
+    await message.answer(sendText)
+    await States.ADMIN_MAILING.set()
+
+
+
+
+
+
+
 
 
 
