@@ -45,3 +45,4 @@ class States(StatesGroup):  # Создаём состояния
     ADMIN_TEXT = State()
     ADMIN_VIDEO = State()
     ADMIN_AUDIO = State()
+    ADMIN_CIRCULAR = State()

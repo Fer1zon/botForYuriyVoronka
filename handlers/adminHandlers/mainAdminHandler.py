@@ -215,16 +215,21 @@ async def editThanksText(message : types.message):
     await message.answer("Текст успешно изменён")
 
 
-async def editPodcast(message : types.message, state:FSMContext):
-    await state.update_data(audioPath = Path("utils","messageContent","podcastWithStudent","audio.txt"))
+async def editPodcastAfterPay(message : types.message, state:FSMContext):
+    await state.update_data(audioPath = Path("utils","messageContent","podcastWithStudent", "podcastAfterPay","audio.txt"))
+    await message.answer("Отправьте аудиофайл")
+    await States.ADMIN_AUDIO.set()
+
+async def editPodcastBeforePay(message : types.message, state:FSMContext):
+    await state.update_data(audioPath = Path("utils","messageContent","podcastWithStudent", "podcastBeforePay","audio.txt"))
     await message.answer("Отправьте аудиофайл")
     await States.ADMIN_AUDIO.set()
 
 
 async def editReminderVideo(message : types.message, state:FSMContext):
     await state.update_data(videoPath = Path("utils","messageContent","circularMessage","video.txt"))
-    await message.answer("Отправьте видео")
-    await States.ADMIN_VIDEO.set()
+    await message.answer("Отправьте кружочек")
+    await States.ADMIN_CIRCULAR.set()
 
 
 async def editPodcastTextNotPay(message : types.message):
@@ -234,7 +239,7 @@ async def editPodcastTextNotPay(message : types.message):
     elif len(message.get_args()) > 1024:
         await message.answer("Текст не должен быть длиннее 1024 символов")
     
-    with open(Path("utils","messageContent","podcastWithStudent","sendTextIfNotPay.txt"), "w", encoding="utf-8") as textFile:
+    with open(Path("utils","messageContent","podcastWithStudent","podcastBeforePay" ,"sendTextIfNotPay.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
 
@@ -248,7 +253,7 @@ async def editPodcastTextPay(message : types.message):
     elif len(message.get_args()) > 1024:
         await message.answer("Текст не должен быть длиннее 1024 символов")
     
-    with open(Path("utils","messageContent","podcastWithStudent","sendTextIfPay.txt"), "w", encoding="utf-8") as textFile:
+    with open(Path("utils","messageContent","podcastWithStudent","podcastAfterPay","sendTextIfPay.txt"), "w", encoding="utf-8") as textFile:
         textFile.write(message.get_args())
 
 
@@ -329,6 +334,17 @@ async def editImg(message : types.message, state:FSMContext):
         img.write(message.photo[-1].file_id)
 
     await message.answer("Изображение изменено")
+    await States.ADMIN_MAIN_MENU.set()
+
+
+async def editCircularVideo(message : types.Message, state:FSMContext):
+    async with state.proxy() as data:
+        videoPath = data["videoPath"]
+    
+    with open(videoPath, "w", encoding = "utf-8") as video:
+        video.write(message.video_note.file_id)
+
+    await message.answer("Кружок изменен")
     await States.ADMIN_MAIN_MENU.set()
 
 

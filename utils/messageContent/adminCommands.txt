@@ -19,7 +19,8 @@
 
 /edit_thanks_text {Новый текст} - Изменить благодарственный за покупку текст(/edit_thanks_text Спасибо за покупку!)
 
-/edit_podcast - Изменить аудио подкаст
+/edit_podcast_after_pay - Изменить аудио подкаст после оплаты
+/edit_podcast_before_pay - Изменить аудио подкаст до оплаты
 /edit_podcast_text_not_pay {Новый текст} - Изменить текст подкаста если еще не купил(/edit_podcast_text_not_pay Купите пожалуйста)
 /edit_podcast_text_pay {Новый текст} - Изменить текст подкаста если уже купил(/edit_podcast_text_pay Это подкаст)
 

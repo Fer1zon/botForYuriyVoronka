@@ -24,12 +24,12 @@ from handlers.userHandlers.pay import paidClick, getPayImg
 
 
 
-from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcast, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay, editHelloText
+from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcastAfterPay, editPodcastBeforePay, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay, editHelloText, editCircularVideo
 
 
 
 def registerStartHandler(dp:Dispatcher):#Регистратор хандлеров относящихся к началу пользования ботом
-    #dp.register_message_handler(startBotHandlerAdmin,lambda msg: msg.from_user.id in adminId,  commands=["start", "help"], state = "*")
+    dp.register_message_handler(startBotHandlerAdmin,lambda msg: msg.from_user.id in adminId,  commands=["start", "help"], state = "*")
     dp.register_message_handler(startBotHandlerUser, commands="start", state = "*")
     
     
@@ -81,7 +81,8 @@ def registerAdminHandler(dp:Dispatcher):#Регистрация админ ха�
 
     dp.register_message_handler(editThanksText, commands="edit_thanks_text", state = States.ADMIN_MAIN_MENU)
 
-    dp.register_message_handler(editPodcast, commands="edit_podcast", state = States.ADMIN_MAIN_MENU)
+    dp.register_message_handler(editPodcastAfterPay, commands="edit_podcast_after_pay", state = States.ADMIN_MAIN_MENU)
+    dp.register_message_handler(editPodcastBeforePay, commands="edit_podcast_before_pay", state = States.ADMIN_MAIN_MENU)
     dp.register_message_handler(editPodcastTextNotPay, commands="edit_podcast_text_not_pay", state = States.ADMIN_MAIN_MENU)
     dp.register_message_handler(editPodcastTextPay, commands="edit_podcast_text_pay", state = States.ADMIN_MAIN_MENU)
 
@@ -91,6 +92,7 @@ def registerAdminHandler(dp:Dispatcher):#Регистрация админ ха�
     dp.register_message_handler(editVideo, content_types="video", state = States.ADMIN_VIDEO)
     dp.register_message_handler(editAudio, content_types="audio", state = States.ADMIN_AUDIO)
     dp.register_message_handler(editImg, content_types="photo", state = States.ADMIN_IMG)
+    dp.register_message_handler(editCircularVideo, content_types=types.ContentTypes.VIDEO_NOTE, state = States.ADMIN_CIRCULAR)
 
 
     dp.register_callback_query_handler(acceptApplication, lambda call: call.data.split("|")[0] == "accept", state = "*")
