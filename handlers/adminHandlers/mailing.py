@@ -35,19 +35,26 @@ async def sendResult(userId : int):
         elif content["type"] == "voice":
             await bot.send_voice(userId, content["content"])
 
+        elif content["type"] == "video_note":
+            await bot.send_video_note(userId, content["content"])
+
     elif text != None and content != None:
         
 
         if content["type"] == "photo":
-            await bot.send_photo(userId, content["content"])
+            await bot.send_photo(userId, content["content"], caption = text)
 
         elif content["type"] == "video":
-            await bot.send_video(userId, content["content"])
+            await bot.send_video(userId, content["content"], caption = text)
 
         elif content["type"] == "voice":
-            await bot.send_voice(userId, content["content"])
+            await bot.send_voice(userId, content["content"], caption = text)
 
-        await bot.send_message(userId, text)
+        elif content["type"] == "video_note":
+            await bot.send_video_note(userId, content["content"])
+            await bot.send_message(userId, text)
+
+        
 
 
 
@@ -67,27 +74,34 @@ async def sendMessageToUser(userId, text, content):
 
         elif content["type"] == "voice":
             await bot.send_voice(userId, content["content"])
+        
+        elif content["type"] == "video_note":
+            await bot.send_video_note(userId, content["content"])
 
     elif text != None and content != None:
         
 
         if content["type"] == "photo":
-            await bot.send_photo(userId, content["content"])
+            await bot.send_photo(userId, content["content"], caption = text)
 
         elif content["type"] == "video":
-            await bot.send_video(userId, content["content"])
+            await bot.send_video(userId, content["content"], caption = text)
 
         elif content["type"] == "voice":
-            await bot.send_voice(userId, content["content"])
+            await bot.send_voice(userId, content["content"], caption = text)
 
-        await bot.send_message(userId, text)
+        elif content["type"] == "video_note":
+            await bot.send_video_note(userId, content["content"])
+            await bot.send_message(userId, text)
+
+        
 
 
         
 
 
 async def getTextMailing(message:types.Message, state:FSMContext):
-    if len(message.text) > 4096:
+    if len(message.text) > 1024:
         return await message.answer("Текст не должен превышать 4096 символов!")
     
 
@@ -118,6 +132,13 @@ async def getVoiceMailing(message:types.Message, state:FSMContext):
 
     await sendResult(message.from_user.id)
 
+
+async def getVideoNoteMailing(message:types.Message, state:FSMContext):
+    videoNote = message.video_note.file_id
+
+    await state.update_data(content = {"type" : "video_note", "content" : videoNote})
+
+    await sendResult(message.from_user.id)
 
 
 

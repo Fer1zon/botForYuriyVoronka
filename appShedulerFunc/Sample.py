@@ -152,7 +152,7 @@ async def sendMessageAfter6Hours(chat_id, state, message_id, deleteMessages:list
     if payStatus == "False":
         await sendPodcast(chat_id, payStatus, gettingPodcast)
         await state.update_data(gettingPodcast = "True")
-    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
+    scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now() + timedelta(days=14), args=[chat_id, state, message_id, deleteMessages])
     #scheduler.add_job(sendMessageAfter14Days, "date", run_date = datetime.now() + timedelta(seconds=70), args=[chat_id, state, message_id, deleteMessages])
 
 

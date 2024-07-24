@@ -27,7 +27,7 @@ from handlers.userHandlers.pay import paidClick, getPayImg
 from handlers.adminHandlers.mainAdminHandler import editAudio, editImg, editVideo, editText, editHelloImg, editPodcastAfterPay, editPodcastBeforePay, editReminderVideo, editUrl1, editUrl2, editUrl3, editUrl4, editImg0, editText0, editText2, editText3, editThanksText, editVideo2, editVideo3, editText1, editVideo1, acceptApplication, declineApplication, editPodcastTextNotPay, editPodcastTextPay, editHelloText, editCircularVideo, mailing
 
 
-from adminHandlers.mailing import getTextMailing, getPhotoMailing, getVoiceMailing, getVideoMailing, startMailing
+from adminHandlers.mailing import getTextMailing, getPhotoMailing, getVoiceMailing, getVideoMailing, getVideoNoteMailing, startMailing
 
 
 
@@ -110,6 +110,7 @@ def registerAdminHandler(dp:Dispatcher):#Регистрация админ ха�
     dp.register_message_handler(getPhotoMailing, content_types="photo", state = States.ADMIN_MAILING)
     dp.register_message_handler(getVoiceMailing, content_types="voice", state = States.ADMIN_MAILING)
     dp.register_message_handler(getVideoMailing, content_types="video", state = States.ADMIN_MAILING)
+    dp.register_message_handler(getVideoNoteMailing, content_types=types.ContentTypes.VIDEO_NOTE, state = States.ADMIN_MAILING)
 
 
 

@@ -60,8 +60,8 @@ async def getPayImg(message:types.Message, state:FSMContext):
     sendAdminText = f"Пользователь @{message.from_user.username} оплатил заказ"
     sendImg = message.photo[-1].file_id
 
-    accept = InlineKeyboardButton("Принять оплату", callback_data="accept" + "|" + str(message.from_user.id))
-    decline = InlineKeyboardButton("Отклонить оплату", callback_data="decline" + "|" + str(message.from_user.id))
+    accept = InlineKeyboardButton("Подтвердить ✅", callback_data="accept" + "|" + str(message.from_user.id))
+    decline = InlineKeyboardButton("Отклонить 🚫", callback_data="decline" + "|" + str(message.from_user.id))
 
     keyboard = InlineKeyboardMarkup(row_width=2).add(accept, decline)
 
