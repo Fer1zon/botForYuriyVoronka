@@ -33,7 +33,7 @@ async def acceptApplication(call: types.CallbackQuery):
     
     await bot.send_message(userId, text = sendText)
 
-    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[call.from_user.id, "True", "False"])
+    scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(hours=3), args=[userId, "True", "False"])
     #scheduler.add_job(sendPodcast, "date", run_date = datetime.now() + timedelta(seconds=15), args=[userId, "True", "False"])
 
 async def declineApplication(call: types.CallbackQuery):
